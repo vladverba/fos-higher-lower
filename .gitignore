@@ -2,3 +2,6 @@
 .env
 main.py
 salary_date.json
+.DS_Store
+salary_data.json
+website/app.py
