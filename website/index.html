@@ -1,0 +1,105 @@
+<!-- Resource: https://medium.com/swlh/linking-nba-salary-to-performance-sample-player-analysis-with-python-2c568455b306 -->
+<!-- https://www.google.com/search?client=firefox-b-1-d&q=scrape+spotrac+salaries -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- html head -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOS - Higher Lower</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!-- html body -->
+  <body>
+    <div class="score-holder">
+      Score:
+      <p id="scoreHtml">0</p>
+    </div>
+    <div class="halves-holder">
+      <div
+        class="left-side"
+        onclick="compareSalary(value1=random_players[0], value2=random_players[1])"
+      >
+        <p id="randomPlayer1"></p>
+      </div>
+      <div
+        class="right-side"
+        onclick="compareSalary(value1=random_players[1], value2=random_players[0])"
+      >
+        <p id="randomPlayer2"></p>
+      </div>
+    </div>
+  </body>
+
+  <!-- set the number of points - starts at zero -->
+  <script>
+    num_points = 0;
+
+    // function to update the score
+    function updateScore() {
+      document.getElementById("scoreHtml").innerHTML = num_points;
+    }
+  </script>
+
+  <!-- add script with player salary data -->
+  <script type="text/javascript" src="salary_data.js"></script>
+
+  <!-- display first two random players on page load -->
+  <script>
+    random_players = getTwoRandomDicts(salary_data);
+    console.log(random_players);
+  </script>
+
+  <!-- function to set the inner HTML of the left and right divs -->
+  <script>
+    function generatePlayersHtml() {
+      player1_name = document.getElementById("randomPlayer1").innerHTML =
+        random_players[0]["player_names"];
+      player2_name = document.getElementById("randomPlayer2").innerHTML =
+        random_players[1]["player_names"];
+    }
+  </script>
+
+  <!-- generate the inner html on page load -->
+  <script>
+    generatePlayersHtml();
+  </script>
+
+  <!-- function to compare the salary of two players -->
+  <script>
+    function compareSalary(player1, player2) {
+      if (player1["22_23_salary"] > player2["22_23_salary"]) {
+        console.log(
+          "correct! - " +
+            player1["22_23_salary"] +
+            " greater than " +
+            player2["22_23_salary"]
+        );
+        alert("Correct! Generating new players.");
+        // add one point to the number of points
+        num_points++;
+        // update the score
+        updateScore();
+        // generate new players
+        random_players = getTwoRandomDicts((list_dict = salary_data));
+        console.log(random_players);
+        generatePlayersHtml();
+      } else {
+        console.log(
+          "wrong! - " +
+            player2["22_23_salary"] +
+            " greater than " +
+            player1["22_23_salary"]
+        );
+        alert("Wrong! Try again.");
+        // reset the number of points to zero
+        num_points = 0;
+        updateScore();
+      }
+    }
+  </script>
+</html>
