@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.home_body {
+  border: 1px solid red;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .halves-holder {
   display: flex;
   flex-wrap: wrap;
