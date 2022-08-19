@@ -25,12 +25,14 @@
         onclick="compareSalary(value1=random_players[0], value2=random_players[1])"
       >
         <p id="randomPlayer1"></p>
+        <p id="randomPlayer1Value"></p>
       </div>
       <div
         class="right-side"
         onclick="compareSalary(value1=random_players[1], value2=random_players[0])"
       >
         <p id="randomPlayer2"></p>
+        <p id="randomPlayer2Value"></p>
       </div>
     </div>
   </body>
@@ -38,7 +40,6 @@
   <!-- set the number of points - starts at zero -->
   <script>
     numPoints = 0;
-    // import { numPoints } from "./score.js";
     console.log(numPoints);
 
     // function to update the score
@@ -64,6 +65,11 @@
         random_players[0]["label"];
       player2_name = document.getElementById("randomPlayer2").innerHTML =
         random_players[1]["label"];
+
+      player1_value = document.getElementById("randomPlayer1Value").innerHTML =
+        "";
+      player2_value = document.getElementById("randomPlayer2Value").innerHTML =
+        "";
     }
   </script>
 
@@ -79,6 +85,11 @@
         console.log(
           "correct! - " + player1["value"] + " greater than " + player2["value"]
         );
+        document.getElementById("randomPlayer1Value").innerHTML =
+          "$" + random_players[0]["value"].toLocaleString("en-US");
+        document.getElementById("randomPlayer2Value").innerHTML =
+          "$" + random_players[1]["value"].toLocaleString("en-US");
+
         alert("Correct! Generating new players.");
         // add one point to the number of points
         numPoints++;
@@ -92,6 +103,13 @@
         console.log(
           "wrong! - " + player2["value"] + " greater than " + player1["value"]
         );
+        document.getElementById("randomPlayer1Value").innerHTML =
+          random_players[0]["value"].toLocaleString("en-US");
+        document.getElementById("randomPlayer2Value").innerHTML =
+          random_players[1]["value"].toLocaleString("en-US");
+
+        alert("Wrong! Try again.");
+
         sessionStorage.setItem("userScore", numPoints);
         // open game over page
         window.location.href = "gameover.html";
