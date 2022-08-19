@@ -37,16 +37,19 @@
 
   <!-- set the number of points - starts at zero -->
   <script>
-    num_points = 0;
+    numPoints = 0;
+    // import { numPoints } from "./score.js";
+    console.log(numPoints);
 
     // function to update the score
     function updateScore() {
-      document.getElementById("scoreHtml").innerHTML = num_points;
+      document.getElementById("scoreHtml").innerHTML = numPoints;
     }
   </script>
 
   <!-- add script with player salary data -->
   <script type="text/javascript" src="salary_data.js"></script>
+  <script type="text/javascript" src="salary_functions.js"></script>
 
   <!-- display first two random players on page load -->
   <script>
@@ -58,9 +61,9 @@
   <script>
     function generatePlayersHtml() {
       player1_name = document.getElementById("randomPlayer1").innerHTML =
-        random_players[0]["player_names"];
+        random_players[0]["label"];
       player2_name = document.getElementById("randomPlayer2").innerHTML =
-        random_players[1]["player_names"];
+        random_players[1]["label"];
     }
   </script>
 
@@ -72,16 +75,13 @@
   <!-- function to compare the salary of two players -->
   <script>
     function compareSalary(player1, player2) {
-      if (player1["22_23_salary"] > player2["22_23_salary"]) {
+      if (player1["value"] > player2["value"]) {
         console.log(
-          "correct! - " +
-            player1["22_23_salary"] +
-            " greater than " +
-            player2["22_23_salary"]
+          "correct! - " + player1["value"] + " greater than " + player2["value"]
         );
         alert("Correct! Generating new players.");
         // add one point to the number of points
-        num_points++;
+        numPoints++;
         // update the score
         updateScore();
         // generate new players
@@ -90,17 +90,11 @@
         generatePlayersHtml();
       } else {
         console.log(
-          "wrong! - " +
-            player2["22_23_salary"] +
-            " greater than " +
-            player1["22_23_salary"]
+          "wrong! - " + player2["value"] + " greater than " + player1["value"]
         );
-        // alert("Wrong! Try again.");
+        sessionStorage.setItem("userScore", numPoints);
         // open game over page
         window.location.href = "gameover.html";
-        // reset the number of points to zero
-        num_points = 0;
-        updateScore();
       }
     }
   </script>

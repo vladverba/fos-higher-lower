@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="home_body">
-    Game Over! Try again?
+    <h1>Game Over! Try again?</h1>
+    <h3 id="scoreHtml"></h3>
+
     <button onclick="window.location.href = 'app.html'">Start Game</button>
   </body>
+
+  <script>
+    numPoints = sessionStorage.getItem("userScore"); //to get the value
+    // show numPoints on page
+    document.getElementById("scoreHtml").innerHTML = "Your score: " + numPoints;
+  </script>
 </html>
