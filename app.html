@@ -85,20 +85,30 @@
         console.log(
           "correct! - " + player1["value"] + " greater than " + player2["value"]
         );
+
+        // show player salaries
         document.getElementById("randomPlayer1Value").innerHTML =
           "$" + random_players[0]["value"].toLocaleString("en-US");
         document.getElementById("randomPlayer2Value").innerHTML =
           "$" + random_players[1]["value"].toLocaleString("en-US");
 
-        alert("Correct! Generating new players.");
-        // add one point to the number of points
-        numPoints++;
-        // update the score
-        updateScore();
+        // wait 3 seconds and then generate new players
+        setTimeout(function () {
+          alert("Correct! Generating new players.");
+          // add one point to the number of points
+          numPoints++;
+          // update the score
+          updateScore();
+
+          random_players = getTwoRandomDicts(salary_data);
+          console.log(random_players);
+          generatePlayersHtml();
+        }, 1000);
+
         // generate new players
-        random_players = getTwoRandomDicts((list_dict = salary_data));
-        console.log(random_players);
-        generatePlayersHtml();
+        // random_players = getTwoRandomDicts((list_dict = salary_data));
+        // console.log(random_players);
+        // generatePlayersHtml();
       } else {
         console.log(
           "wrong! - " + player2["value"] + " greater than " + player1["value"]
@@ -108,11 +118,14 @@
         document.getElementById("randomPlayer2Value").innerHTML =
           random_players[1]["value"].toLocaleString("en-US");
 
-        alert("Wrong! Try again.");
+        // wait 3 seconds
+        setTimeout(function () {
+          alert("Wrong! Try again.");
 
-        sessionStorage.setItem("userScore", numPoints);
-        // open game over page
-        window.location.href = "gameover.html";
+          sessionStorage.setItem("userScore", numPoints);
+          // open game over page
+          window.location.href = "gameover.html";
+        }, 1000);
       }
     }
   </script>
