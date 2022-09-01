@@ -1,6 +1,3 @@
-<!-- Resource: https://medium.com/swlh/linking-nba-salary-to-performance-sample-player-analysis-with-python-2c568455b306 -->
-<!-- https://www.google.com/search?client=firefox-b-1-d&q=scrape+spotrac+salaries -->
-
 <!DOCTYPE html>
 <html lang="en">
   <!-- html head -->
@@ -11,122 +8,57 @@
     <title>FOS - Higher Lower</title>
 
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- list of dictionaries with player name and salary -->
+    <script type="text/javascript" src="salary_data.js"></script>
+
+    <!-- functions -->
+    <script type="text/javascript" src="functions.js"></script>
+
+    <script type="text/javascript" src="score.js"></script>
   </head>
 
   <!-- html body -->
   <body>
     <div class="score-holder">
       Score:
-      <p id="scoreHtml">0</p>
+      <p id="scoreId">0</p>
     </div>
     <div class="halves-holder">
-      <div
-        class="left-side"
-        onclick="compareSalary(value1=random_players[0], value2=random_players[1])"
-      >
-        <p id="randomPlayer1"></p>
-        <p id="randomPlayer1Value"></p>
+      <div class="left-side" id="leftSideId">
+        <p id="playerNameLeftId"></p>
+        <p id="playerValueLeftId"></p>
       </div>
-      <div
-        class="right-side"
-        onclick="compareSalary(value1=random_players[1], value2=random_players[0])"
-      >
-        <p id="randomPlayer2"></p>
-        <p id="randomPlayer2Value"></p>
+      <div class="right-side">
+        <p id="playerNameRightId"></p>
+        <p id="playerValueRightId"></p>
+        <button
+          id="higherButtonId"
+          onclick="higherButtonClick(playerLeft=playerLeft, playerRight=playerRight)"
+        >
+          Higher
+        </button>
+        <button
+          id="lowerButtonId"
+          onclick="lowerButtonClick(playerLeft=playerLeft, playerRight=playerRight)"
+        >
+          Lower
+        </button>
       </div>
     </div>
   </body>
-
-  <!-- set the number of points - starts at zero -->
   <script>
-    numPoints = 0;
-    console.log(numPoints);
+    // get two random players from the list of players
+    players = getRandomDictPair((list_dict = salary_data));
+    console.log(players);
 
-    // function to update the score
-    function updateScore() {
-      document.getElementById("scoreHtml").innerHTML = numPoints;
-    }
-  </script>
+    playerLeft = players[0];
+    playerRight = players[1];
+    // set the inner HTML of the player names and values
+    document.getElementById("playerNameLeftId").innerHTML = playerLeft.key;
+    document.getElementById("playerValueLeftId").innerHTML =
+      "$" + playerLeft.value.toLocaleString("en-US");
 
-  <!-- add script with player salary data -->
-  <script type="text/javascript" src="salary_data.js"></script>
-  <script type="text/javascript" src="salary_functions.js"></script>
-
-  <!-- display first two random players on page load -->
-  <script>
-    random_players = getTwoRandomDicts(salary_data);
-    console.log(random_players);
-  </script>
-
-  <!-- function to set the inner HTML of the left and right divs -->
-  <script>
-    function generatePlayersHtml() {
-      player1_name = document.getElementById("randomPlayer1").innerHTML =
-        random_players[0]["label"];
-      player2_name = document.getElementById("randomPlayer2").innerHTML =
-        random_players[1]["label"];
-
-      player1_value = document.getElementById("randomPlayer1Value").innerHTML =
-        "";
-      player2_value = document.getElementById("randomPlayer2Value").innerHTML =
-        "";
-    }
-  </script>
-
-  <!-- generate the inner html on page load -->
-  <script>
-    generatePlayersHtml();
-  </script>
-
-  <!-- function to compare the salary of two players -->
-  <script>
-    function compareSalary(player1, player2) {
-      if (player1["value"] > player2["value"]) {
-        console.log(
-          "correct! - " + player1["value"] + " greater than " + player2["value"]
-        );
-
-        // show player salaries
-        document.getElementById("randomPlayer1Value").innerHTML =
-          "$" + random_players[0]["value"].toLocaleString("en-US");
-        document.getElementById("randomPlayer2Value").innerHTML =
-          "$" + random_players[1]["value"].toLocaleString("en-US");
-
-        // wait 3 seconds and then generate new players
-        setTimeout(function () {
-          alert("Correct! Generating new players.");
-          // add one point to the number of points
-          numPoints++;
-          // update the score
-          updateScore();
-
-          random_players = getTwoRandomDicts(salary_data);
-          console.log(random_players);
-          generatePlayersHtml();
-        }, 1000);
-
-        // generate new players
-        // random_players = getTwoRandomDicts((list_dict = salary_data));
-        // console.log(random_players);
-        // generatePlayersHtml();
-      } else {
-        console.log(
-          "wrong! - " + player2["value"] + " greater than " + player1["value"]
-        );
-        document.getElementById("randomPlayer1Value").innerHTML =
-          random_players[0]["value"].toLocaleString("en-US");
-        document.getElementById("randomPlayer2Value").innerHTML =
-          random_players[1]["value"].toLocaleString("en-US");
-
-        // wait 3 seconds
-        setTimeout(function () {
-          alert("Wrong! Try again.");
-
-          sessionStorage.setItem("userScore", numPoints);
-          // open game over page
-          window.location.href = "gameover.html";
-        }, 1000);
-      }
-    }
+    document.getElementById("playerNameRightId").innerHTML = playerRight.key;
   </script>
 </html>
