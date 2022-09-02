@@ -2,6 +2,7 @@
 numPoints = 0;
 
 // function to update the score
-function updateScore() {
+function updateScore(numPoints) {
+  numPoints++;
   document.getElementById("scoreId").innerHTML = numPoints;
 }
