@@ -26,10 +26,12 @@
     </div>
     <div class="halves-holder">
       <div class="left-side" id="leftSideId">
+        <img src="" id="playerImageLeftId" />
         <p id="playerNameLeftId"></p>
         <p id="playerValueLeftId"></p>
       </div>
       <div class="right-side">
+        <img src="" id="playerImageRightId" />
         <p id="playerNameRightId"></p>
         <p id="playerValueRightId"></p>
         <button
@@ -55,10 +57,13 @@
     playerLeft = players[0];
     playerRight = players[1];
     // set the inner HTML of the player names and values
+    document.getElementById("playerImageLeftId").src = playerLeft.image;
+
     document.getElementById("playerNameLeftId").innerHTML = playerLeft.key;
     document.getElementById("playerValueLeftId").innerHTML =
       "$" + playerLeft.value.toLocaleString("en-US");
 
+    document.getElementById("playerImageRightId").src = playerRight.image;
     document.getElementById("playerNameRightId").innerHTML = playerRight.key;
   </script>
 </html>
