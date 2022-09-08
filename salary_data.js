@@ -1319,7 +1319,6 @@ salary_data = [
     value: 3740160,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74121.png",
   },
-  { key: "Mark Williams", value: 3722040, image: "No image" },
   {
     key: "Cole Anthony",
     value: 3613680,
@@ -1395,7 +1394,6 @@ salary_data = [
     value: 3206520,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74124.png",
   },
-  { key: "Simone Fontecchio", value: 3205128, image: "No image" },
   {
     key: "Andre Drummond",
     value: 3200000,
@@ -1571,7 +1569,6 @@ salary_data = [
     value: 2277000,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74132.png",
   },
-  { key: "Andrew Nembhard", value: 2244111, image: "No image" },
   {
     key: "Nikola Jovic",
     value: 2239920,
@@ -1702,13 +1699,11 @@ salary_data = [
     value: 2000000,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/27758.png",
   },
-  { key: "Jaylin Williams", value: 2000000, image: "No image" },
   {
     key: "Garrison Mathews",
     value: 2000000,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32044.png",
   },
-  { key: "Caleb Houstan", value: 2000000, image: "No image" },
   {
     key: "Shake Milton",
     value: 1997718,
@@ -2089,7 +2084,6 @@ salary_data = [
     value: 1752638,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/33007.png",
   },
-  { key: "Carlik Jones", value: 1637966, image: "No image" },
   {
     key: "Sam Hauser",
     value: 1637966,
@@ -2105,15 +2099,11 @@ salary_data = [
     value: 1637966,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/70720.png",
   },
-  { key: "Xavier Moon", value: 1637966, image: "No image" },
-  { key: "Lindell Wigginton", value: 1637966, image: "No image" },
-  { key: "Mac McClung", value: 1637966, image: "No image" },
   {
     key: "Kessler Edwards",
     value: 1637966,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74151.png",
   },
-  { key: "Tyler Hall", value: 1637966, image: "No image" },
   {
     key: "McKinley Wright IV",
     value: 1637966,
@@ -2134,7 +2124,6 @@ salary_data = [
     value: 1637966,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74159.png",
   },
-  { key: "Justin Tillman", value: 1637966, image: "No image" },
   {
     key: "Ayo Dosunmu",
     value: 1563518,
@@ -2194,5 +2183,70 @@ salary_data = [
     key: "Jock Landale",
     value: 1563518,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74215.png",
+  },
+  {
+    key: "Vit Krejci",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/70679.png",
+  },
+  {
+    key: "Aaron Wiggins",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74162.png",
+  },
+  {
+    key: "Austin Reaves",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74218.png",
+  },
+  {
+    key: "JT Thor",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74144.png",
+  },
+  {
+    key: "Dalano Banton",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74153.png",
+  },
+  {
+    key: "Greg Brown III",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74150.png",
+  },
+  {
+    key: "Trendon Watford",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74232.png",
+  },
+  {
+    key: "Daishen Nix",
+    value: 1563518,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74357.png",
+  },
+  {
+    key: "Kennedy Chandler",
+    value: 1200000,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78127.png",
+  },
+  {
+    key: "Ryan Rollins",
+    value: 1017781,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78155.png",
+  },
+  {
+    key: "Jaden Hardy",
+    value: 1017781,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78130.png",
+  },
+  {
+    key: "Max Christie",
+    value: 1017781,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78136.png",
+  },
+  {
+    key: "Jabari Walker",
+    value: 1017781,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78167.png",
   },
 ];
