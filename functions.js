@@ -77,5 +77,5 @@ function higherLowerButtonClick(playerLeft, playerRight, higherLowerFlag) {
       console.log("Incorrect!");
       showGameOver();
     }
-  }, 2000);
+  }, 1500);
 }
