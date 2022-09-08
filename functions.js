@@ -49,11 +49,9 @@ function removeFadeOut(elementId, speed) {
 // save the score and show the game over screen
 function showGameOver() {
   // save the score and open game over page
-  setTimeout(function () {
-    sessionStorage.setItem("userScore", numPoints);
-    // open game over page
-    window.location.href = "gameover.html";
-  }, 2000);
+  sessionStorage.setItem("userScore", numPoints);
+  // open game over page
+  window.location.href = "gameover.html";
 }
 
 // actions when one of the buttons is clicked
@@ -68,11 +66,16 @@ function higherLowerButtonClick(playerLeft, playerRight, higherLowerFlag) {
   }
 
   removeButtonShowSalary();
-  if (playerLeftCompare < playerRightCompare) {
-    console.log("Correct!");
-    updateScore((numPoints = numPoints));
-  } else {
-    console.log("Incorrect!");
-    showGameOver();
-  }
+  // sleep for 2 seconds
+  setTimeout(function () {
+    if (playerLeftCompare < playerRightCompare) {
+      console.log("Correct!");
+      updateScore((numPoints = numPoints));
+      $("#leftSideId").animate({ left: "-50%" }, 1000);
+      $(".right-side").animate({ left: "-50%" }, 1000);
+    } else {
+      console.log("Incorrect!");
+      showGameOver();
+    }
+  }, 2000);
 }

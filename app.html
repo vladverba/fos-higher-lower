@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FOS - Higher Lower</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
 
     <!-- list of dictionaries with player name and salary -->
@@ -66,4 +68,21 @@
     document.getElementById("playerImageRightId").src = playerRight.image;
     document.getElementById("playerNameRightId").innerHTML = playerRight.key;
   </script>
+
+  <!-- <script>
+    $("#higherButtonId").click(function () {
+      console.log("Do Higher Button Click Stuff ");
+      // slide the left half to the left by screen width/2
+      $("#leftSideId").animate({ left: "-50%" }, 1000);
+      // $(".left-side").animate({ left: "-100%" }, 1000);
+      $(".right-side").animate({ left: "-50%" }, 1000);
+    });
+    $("#lowerButtonId").click(function () {
+      console.log("Do Lower Button Click Stuff ");
+      $(".left-side").animate({ left: "-50%" }, 1000);
+      $(".right-side").animate({ left: "-50%" }, 1000);
+
+      // change the color of #leftSideId to green
+    });
+  </script> -->
 </html>

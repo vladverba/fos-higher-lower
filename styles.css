@@ -32,6 +32,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  position: relative;
 }
 
 .left-side {
@@ -54,6 +56,9 @@
   right: 0;
   width: 100px;
   height: 100px;
+
+  /* z position */
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -66,4 +71,15 @@
     width: 100%;
     height: 50%;
   }
+}
+
+.change_color {
+  background-color: black;
+}
+
+.slide_left {
+  left: 0px !important;
+}
+.disable_flex {
+  display: none;
 }
