@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .score-holder {
   display: flex;
   flex-direction: column;
