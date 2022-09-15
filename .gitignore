@@ -9,3 +9,13 @@ spotrac.py
 temp.js
 spotrac_testing.py
 /testing
+styles-dep.css
+app-dep.html
+gameover-dep.html
+index-dep.html
+functions-dep.js
+salary_data-dep.js
+salary_functions-dep.js
+score-dep.js
+/python
+/dep

@@ -1,88 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- html head -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOS - Higher Lower</title>
+    <title>Higher Lower</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- styles sheet -->
     <link rel="stylesheet" href="styles.css" />
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- list of dictionaries with player name and salary -->
-    <script type="text/javascript" src="salary_data.js"></script>
-
-    <!-- functions -->
-    <script type="text/javascript" src="functions.js"></script>
-
-    <script type="text/javascript" src="score.js"></script>
   </head>
-
-  <!-- html body -->
   <body>
     <div class="score-holder">
       Score:
-      <p id="scoreId">0</p>
+      <p id="userScore">0</p>
     </div>
-    <div class="halves-holder">
-      <div class="left-side" id="leftSideId">
-        <img src="" id="playerImageLeftId" />
-        <p id="playerNameLeftId"></p>
-        <p id="playerValueLeftId"></p>
+    <div class="home-body">
+      <div class="player-half" id="leftHalfId">
+        <div class="player-info-holder" id="leftPlayerHolderId">
+          <img src="" id="playerImageLeftId" />
+          <p id="leftPlayerName"></p>
+          <p id="leftPlayerSalary"></p>
+        </div>
       </div>
-      <div class="right-side">
-        <img src="" id="playerImageRightId" />
-        <p id="playerNameRightId"></p>
-        <p id="playerValueRightId"></p>
-        <button
-          id="higherButtonId"
-          onclick="higherLowerButtonClick(playerLeft=playerLeft, playerRight=playerRight, higherLowerFlag='higher')"
-        >
-          Higher
-        </button>
-        <button
-          id="lowerButtonId"
-          onclick="higherLowerButtonClick(playerLeft=playerLeft, playerRight=playerRight, higherLowerFlag='lower')"
-        >
-          Lower
-        </button>
+      <div class="player-half" id="rightHalfId">
+        <div class="player-info-holder" id="rightPlayerHolderId">
+          <img src="" id="playerImageRightId" />
+          <p id="rightPlayerName"></p>
+          <p id="rightPlayerSalary"></p>
+          <button id="higherButton" onclick="highLowButtonClick('higher')">
+            Higher
+          </button>
+          <button id="lowerButton" onclick="highLowButtonClick('lower')">
+            Lower
+          </button>
+        </div>
       </div>
     </div>
   </body>
+
+  <!-- scripts -->
+  <script src="salary_data.js"></script>
+  <script src="script.js"></script>
   <script>
-    // get two random players from the list of players
-    players = getRandomDictPair((list_dict = salary_data));
-    console.log(players);
-
-    playerLeft = players[0];
-    playerRight = players[1];
-    // set the inner HTML of the player names and values
-    document.getElementById("playerImageLeftId").src = playerLeft.image;
-
-    document.getElementById("playerNameLeftId").innerHTML = playerLeft.key;
-    document.getElementById("playerValueLeftId").innerHTML =
-      "$" + playerLeft.value.toLocaleString("en-US");
-
-    document.getElementById("playerImageRightId").src = playerRight.image;
-    document.getElementById("playerNameRightId").innerHTML = playerRight.key;
+    onPageLoad();
   </script>
-
-  <!-- <script>
-    $("#higherButtonId").click(function () {
-      console.log("Do Higher Button Click Stuff ");
-      // slide the left half to the left by screen width/2
-      $("#leftSideId").animate({ left: "-50%" }, 1000);
-      // $(".left-side").animate({ left: "-100%" }, 1000);
-      $(".right-side").animate({ left: "-50%" }, 1000);
-    });
-    $("#lowerButtonId").click(function () {
-      console.log("Do Lower Button Click Stuff ");
-      $(".left-side").animate({ left: "-50%" }, 1000);
-      $(".right-side").animate({ left: "-50%" }, 1000);
-
-      // change the color of #leftSideId to green
-    });
-  </script> -->
 </html>
