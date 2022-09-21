@@ -1,25 +1,49 @@
 // get random player from salary_data list in salary_data.js file
-function getRandomPlayer(exclude_player = null) {
-  if (exclude_player == null) {
-    return salary_data[Math.floor(Math.random() * salary_data.length)];
+// function getRandomPlayer(exclude_player = null) {
+//   if (exclude_player == null) {
+//     return salary_data[Math.floor(Math.random() * salary_data.length)];
+//   } else {
+//     var random_player =
+//       salary_data[Math.floor(Math.random() * salary_data.length)];
+//     while (
+//       random_player.key == exclude_player.key ||
+//       random_player.value == exclude_player.value
+//     ) {
+//       random_player =
+//         salary_data[Math.floor(Math.random() * salary_data.length)];
+//     }
+//   }
+//   return random_player;
+// }
+
+function getRandomPlayer(exclude_name = null, exclude_salary = null) {
+  // get a random player whos name is not in exclude_name and salary is not in exclude_salary
+
+  var random_player =
+    salary_data[Math.floor(Math.random() * salary_data.length)];
+
+  if (exclude_name == null && exclude_salary == null) {
+    return random_player;
   } else {
-    var random_player =
-      salary_data[Math.floor(Math.random() * salary_data.length)];
+    // console.log("excludes are not null");
     while (
-      random_player.key == exclude_player.key ||
-      random_player.value == exclude_player.value
+      exclude_name.includes(random_player.key) ||
+      exclude_salary.includes(random_player.value)
     ) {
       random_player =
         salary_data[Math.floor(Math.random() * salary_data.length)];
     }
+    return random_player;
   }
-  return random_player;
 }
 
 //////// on page load ////////
 // generate two random players
 randomPlayerLeft = getRandomPlayer();
-randomPlayerRight = getRandomPlayer(randomPlayerLeft);
+randomPlayerRight = getRandomPlayer(
+  (exclude_name = [randomPlayerLeft.key]),
+  (exclude_salary = [randomPlayerLeft.value])
+);
 // set new player to null (does not exist)
 newPlayer = null;
 
@@ -227,7 +251,20 @@ function highLowButtonClick(higher_lower_flag) {
   if (guessedCorrect == true) {
     incrementScore();
     // get a NEW random player
-    newPlayer = getRandomPlayer(randomPlayerLeft);
+
+    // get name value from ID rightPlayerName
+    var rightPlayerName = document.getElementById("rightPlayerName").innerHTML;
+    // get name value from ID leftPlayerName
+    var leftPlayerName = document.getElementById("leftPlayerName").innerHTML;
+
+    // get salary value from ID rightPlayerSalary
+    var rightPlayerSalary = document.getElementById("rightPlayerSalary");
+    // get salary value from ID leftPlayerSalary
+    var leftPlayerSalary = document.getElementById("leftPlayerSalary");
+    newPlayer = getRandomPlayer(
+      (exclude_name = [rightPlayerName, leftPlayerName]),
+      (exclude_salary = [Number(rightPlayerSalary), Number(leftPlayerSalary)])
+    );
     console.log(newPlayer);
 
     if (newPlayer == null) {

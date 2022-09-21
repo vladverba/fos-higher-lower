@@ -55,8 +55,8 @@
 
   flex-shrink: 0;
 
-  width: 150px;
-  height: 250px;
+  min-width: 150px;
+  min-height: 250px;
 }
 
 .simple-body {
