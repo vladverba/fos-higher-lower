@@ -25,6 +25,8 @@ function getRandomPlayer(exclude_name = null, exclude_salary = null) {
   if (exclude_name == null && exclude_salary == null) {
     return random_player;
   } else {
+    console.log("exclude_name: " + exclude_name);
+    console.log("exclude_salary: " + exclude_salary);
     // console.log("excludes are not null");
     while (
       exclude_name.includes(random_player.key) ||
@@ -63,24 +65,40 @@ function compareSalaries(higher_lower_flag) {
   // get value from ID leftPlayerSalary
   var leftPlayerSalary = document.getElementById("leftPlayerSalary").innerHTML;
 
+  // leftPlayerSalary to number
+  leftPlayerSalary = Number(leftPlayerSalary.replace(/[^0-9.-]+/g, ""));
+  console.log("leftPlayerSalary: " + leftPlayerSalary);
+
   // get value from ID rightPlayerSalary
   var rightPlayerSalary =
     document.getElementById("rightPlayerSalary").innerHTML;
 
+  // rightPlayerSalary to number
+  rightPlayerSalary = Number(rightPlayerSalary.replace(/[^0-9.-]+/g, ""));
+  console.log("rightPlayerSalary: " + rightPlayerSalary);
+
   if (higher_lower_flag == "higher") {
     if (leftPlayerSalary < rightPlayerSalary) {
-      console.log("correct");
+      console.log(
+        "correct - " + rightPlayerSalary + " greater than " + leftPlayerSalary
+      );
       return true;
     } else if (leftPlayerSalary > rightPlayerSalary) {
-      console.log("incorrect");
+      console.log(
+        "incorrect - " + leftPlayerSalary + " greater than " + rightPlayerSalary
+      );
       return false;
     }
   } else if (higher_lower_flag == "lower") {
     if (leftPlayerSalary > rightPlayerSalary) {
-      console.log("correct");
+      console.log(
+        "correct - " + rightPlayerSalary + " less than " + leftPlayerSalary
+      );
       return true;
     } else if (leftPlayerSalary < rightPlayerSalary) {
-      console.log("incorrect");
+      console.log(
+        "incorrect - " + leftPlayerSalary + " less than " + rightPlayerSalary
+      );
       return false;
     }
   }
@@ -92,7 +110,7 @@ function onPageLoad() {
   document.getElementById("playerImageLeftId").src = randomPlayerLeft.image;
   document.getElementById("leftPlayerName").innerHTML = randomPlayerLeft.key;
   document.getElementById("leftPlayerSalary").innerHTML =
-    randomPlayerLeft.value;
+    randomPlayerLeft.value.toLocaleString("en-US");
 
   // populate right side with randomPlayerRight (do not show salary)
   document.getElementById("playerImageRightId").src = randomPlayerRight.image;
@@ -244,7 +262,7 @@ function highLowButtonClick(higher_lower_flag) {
 
   // show #rightPlayerSalary
   document.getElementById("rightPlayerSalary").innerHTML =
-    randomPlayerRight.value;
+    randomPlayerRight.value.toLocaleString("en-US");
 
   guessedCorrect = compareSalaries(higher_lower_flag);
 
@@ -259,8 +277,13 @@ function highLowButtonClick(higher_lower_flag) {
 
     // get salary value from ID rightPlayerSalary
     var rightPlayerSalary = document.getElementById("rightPlayerSalary");
+    // rightPlayerSalary to number
+    rightPlayerSalary = Number(rightPlayerSalary.innerHTML.replace(/,/g, ""));
+
     // get salary value from ID leftPlayerSalary
     var leftPlayerSalary = document.getElementById("leftPlayerSalary");
+    // leftPlayerSalary to number
+    leftPlayerSalary = Number(leftPlayerSalary.innerHTML.replace(/,/g, ""));
     newPlayer = getRandomPlayer(
       (exclude_name = [rightPlayerName, leftPlayerName]),
       (exclude_salary = [Number(rightPlayerSalary), Number(leftPlayerSalary)])
