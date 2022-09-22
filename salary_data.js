@@ -125,14 +125,14 @@ salary_data = [
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/6316.png",
   },
   {
-    key: "Joel Embiid",
-    value: 33616770,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/15355.png",
-  },
-  {
     key: "Andrew Wiggins",
     value: 33616770,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/15353.png",
+  },
+  {
+    key: "Joel Embiid",
+    value: 33616770,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/15355.png",
   },
   {
     key: "C.J. McCollum",
@@ -365,11 +365,6 @@ salary_data = [
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/15377.png",
   },
   {
-    key: "Myles Turner",
-    value: 18000000,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/17839.png",
-  },
-  {
     key: "Evan Fournier",
     value: 18000000,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/10845.png",
@@ -378,6 +373,11 @@ salary_data = [
     key: "Bogdan Bogdanovic",
     value: 18000000,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/15379.png",
+  },
+  {
+    key: "Myles Turner",
+    value: 18000000,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/17839.png",
   },
   {
     key: "Steven Adams",
@@ -1485,11 +1485,6 @@ salary_data = [
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/23650.png",
   },
   {
-    key: "TyTy Washington Jr.",
-    value: 2210040,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78125.png",
-  },
-  {
     key: "Nah'Shon Hyland",
     value: 2201520,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74133.png",
@@ -1688,21 +1683,6 @@ salary_data = [
     key: "Oshae Brissett",
     value: 1846738,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32418.png",
-  },
-  {
-    key: "Frank Kaminsky",
-    value: 1836090,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/17837.png",
-  },
-  {
-    key: "Aaron Holiday",
-    value: 1836090,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/26989.png",
-  },
-  {
-    key: "Chris Silva",
-    value: 1836090,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32319.png",
   },
   {
     key: "James Johnson",
@@ -1985,6 +1965,26 @@ salary_data = [
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/31593.png",
   },
   {
+    key: "Frank Kaminsky",
+    value: 1836090,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/17837.png",
+  },
+  {
+    key: "Aaron Holiday",
+    value: 1836090,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/26989.png",
+  },
+  {
+    key: "Chris Silva",
+    value: 1836090,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32319.png",
+  },
+  {
+    key: "Armoni Brooks",
+    value: 1836090,
+    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32812.png",
+  },
+  {
     key: "Javonte Green",
     value: 1815677,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/32409.png",
@@ -2063,11 +2063,6 @@ salary_data = [
     key: "Saben Lee",
     value: 1752638,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/70680.png",
-  },
-  {
-    key: "Gabe York",
-    value: 1637966,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/28027.png",
   },
   {
     key: "Trevelin Queen",
@@ -2215,18 +2210,8 @@ salary_data = [
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/74357.png",
   },
   {
-    key: "Max Christie",
-    value: 1017781,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78136.png",
-  },
-  {
     key: "Jabari Walker",
     value: 1017781,
     image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78167.png",
-  },
-  {
-    key: "Ryan Rollins",
-    value: 1017781,
-    image: "https://d1dglpr230r57l.cloudfront.net/headshots/nba/78155.png",
   },
 ];
