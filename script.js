@@ -176,6 +176,7 @@ function addHighLowButtons() {
   // add higher button
   var higherButton = document.createElement("button");
   higherButton.id = "higherButton";
+  higherButton.className = "higher-lower-button";
   higherButton.innerHTML = "Higher";
   higherButton.onclick = function () {
     highLowButtonClick("higher");
@@ -185,6 +186,7 @@ function addHighLowButtons() {
   // add lower button
   var lowerButton = document.createElement("button");
   lowerButton.id = "lowerButton";
+  lowerButton.className = "higher-lower-button";
   lowerButton.innerHTML = "Lower";
   lowerButton.onclick = function () {
     highLowButtonClick("lower");

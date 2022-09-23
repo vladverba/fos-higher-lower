@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="simple-body">
-    <h1>Game Over! Try again?</h1>
-    <h3 id="scoreHtml"></h3>
-    <button onclick="window.location.href = 'app.html'">Start Game</button>
+    <h1 class="home-header">Game Over! Try again?</h1>
+    <p class="home-text" id="scoreHtml"></p>
+    <button
+      class="home-play-button"
+      onclick="window.location.href = 'app.html'"
+    >
+      Start Game
+    </button>
   </body>
   <script>
     numPoints = sessionStorage.getItem("userScore"); //to get the value

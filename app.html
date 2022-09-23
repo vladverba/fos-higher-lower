@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="score-holder">
-      Score:
+      <p>Score: &nbsp;</p>
       <p id="userScore">0</p>
     </div>
     <div class="home-body">
@@ -29,10 +29,18 @@
           <img src="" id="playerImageRightId" />
           <p id="rightPlayerName"></p>
           <p id="rightPlayerSalary"></p>
-          <button id="higherButton" onclick="highLowButtonClick('higher')">
+          <button
+            class="higher-lower-button"
+            id="higherButton"
+            onclick="highLowButtonClick('higher')"
+          >
             Higher
           </button>
-          <button id="lowerButton" onclick="highLowButtonClick('lower')">
+          <button
+            class="higher-lower-button"
+            id="lowerButton"
+            onclick="highLowButtonClick('lower')"
+          >
             Lower
           </button>
         </div>
